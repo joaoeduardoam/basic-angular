@@ -1,0 +1,14 @@
+<h1 [ngStyle]="{'color': condition ? 'green' : 'red'}">Learning Directive ngStyle</h1>
+
+<ul>
+
+    <li *ngFor="let l of list" [ngStyle]="{'color': l=='Approved' ? 'green' : 'red'}">{{l}}</li>
+
+</ul>
+
+<ul>
+
+    <li *ngFor="let l of list" [ngClass]="l=='Approved' ? 'greenFont' : 'redFont'">{{l}}</li>
+
+</ul>
+
