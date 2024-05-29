@@ -1,0 +1,31 @@
+<p>{{form.value.name}}</p>
+<p>{{form.value.age}}</p>
+<p>{{form.value.city}}</p>
+    
+
+
+
+<form [formGroup]="form">
+    <input type="text"      formControlName="name"  placeholder="Name"  class="form-control">
+    <input type="number"    formControlName="age"   placeholder="Age"   class="form-control">
+    <input type="text"      formControlName="city"  placeholder="City"  class="form-control">
+
+    <input type="button" value="Save"   class="btn btn-primary">
+    <input type="button" value="Update" class="btn btn-primary">
+    <input type="button" value="Remove" class="btn btn-primary">
+    <input type="button" value="Cancel" class="btn btn-primary">
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>Select</th>
+        </tr>
+    </thead>
+
+    <tbody></tbody>
+</table>
