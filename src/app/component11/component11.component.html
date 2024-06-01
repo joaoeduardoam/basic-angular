@@ -1,19 +1,56 @@
-<p>{{form.value.name}}</p>
+<!-- <p>{{form.value.name}}</p>
 <p>{{form.value.age}}</p>
 <p>{{form.value.city}}</p>
-    
+     -->
 
 
 
 <form [formGroup]="form">
+
+    @if (form.get('name').hasError('required') && form.get('name').touched) {
+        <p class="alert alert-warning"> The name field needs to be filled in. </p>
+    }
+    @if (form.get('name').hasError('minlength') && form.get('name').touched) {
+        <p class="alert alert-warning"> The name field must have at least three characters. </p>
+    }
     <input type="text"      formControlName="name"  placeholder="Name"  class="form-control">
+
+
+
+
+    @if (form.get('age').hasError('required') && form.get('age').touched) {
+        <p class="alert alert-warning"> The age field needs to be filled in. </p>
+    }
+    @if (form.get('age').hasError('min') && form.get('age').touched) {
+        <p class="alert alert-warning"> Minimum age is 0. </p>
+    }
+    @if (form.get('age').hasError('max') && form.get('age').touched) {
+        <p class="alert alert-warning"> Maximum age is 120. </p>
+    }
     <input type="number"    formControlName="age"   placeholder="Age"   class="form-control">
+
+
+
+    @if (form.get('city').hasError('required') && form.get('city').touched) {
+        <p class="alert alert-warning"> The city field needs to be filled in. </p>
+    }
+    @if (form.get('city').hasError('minlength') && form.get('city').touched) {
+        <p class="alert alert-warning"> The city field must have at least three characters. </p>
+    }
     <input type="text"      formControlName="city"  placeholder="City"  class="form-control">
 
-    <input type="button" value="Save"   class="btn btn-primary">
-    <input type="button" value="Update" class="btn btn-primary">
-    <input type="button" value="Remove" class="btn btn-primary">
-    <input type="button" value="Cancel" class="btn btn-primary">
+
+    @if (saveBtn) {
+        <input type="button" value="Save"       (click)="save()"    class="btn btn-primary" [disabled]="form.invalid">
+    }@else {
+        <input type="button" value="Update"     (click)="update()"  class="btn btn-primary" [disabled]="form.invalid">
+        <input type="button" value="Remove"     (click)="remove()"  class="btn btn-primary">
+        <input type="button" value="Cancel"     (click)="cancel()"  class="btn btn-primary">
+    }
+
+
+    
+
 </form>
 
 <table class="table">
@@ -26,6 +63,14 @@
             <th>Select</th>
         </tr>
     </thead>
+    <tr *ngFor="let v of vector; index as index">
+        <td>{{index+1}}</td>
+        <td>{{v.name}}</td>
+        <td>{{v.age}}</td>
+        <td>{{v.city}}</td>
+        <td><button class="btn btn-primary" (click)="select(index)">Select</button> </td>
+    </tr>
+    <tbody>
 
-    <tbody></tbody>
+    </tbody>
 </table>
