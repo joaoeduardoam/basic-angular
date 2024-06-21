@@ -1,0 +1,33 @@
+<p>{{name | uppercase}}</p>
+<p>{{name | lowercase}}</p>
+<p>{{obj | json}}</p>
+<p>{{value | currency}}</p>
+<p>{{ value | currency:'BRL':'symbol-narrow':'4.2-2' }}</p>
+<p>{{ currentDate | date }}</p> 
+<p>{{ currentDate | date:'fullDate' }}</p> 
+<p>{{ currentDate | date:'short' }}</p> 
+<p>{{number | percent}}</p>
+<p>{{ vector | slice:1:3 }}</p>
+<p>{{ text | slice:0:5 }}</p>
+<p>{{title | titlecase}}</p>
+<p>{{ myObservable | async }}</p>
+<p>{{ myPromise | async }}</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Grade 1</th>
+            <th>Grade 2</th>
+            <th>Average</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of students">
+            <td>{{s.name}}</td>
+            <td>{{s.grade1}}</td>
+            <td>{{s.grade2}}</td>
+            <td>{{s | average}}</td>
+        </tr>
+    </tbody>
+</table>
