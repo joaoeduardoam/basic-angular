@@ -1,7 +1,26 @@
 
 <!-- FORM -->
 <form [formGroup]="form">
-    <input type="number" class="form-control" formControlName="id" readonly >
+
+         <!-- VALIDATIONS -->
+         @if (form.get('name').hasError('required') && form.get('name').touched) {
+            <p class="alert alert-warning">The name field needs to be filled in.</p>
+        }
+    
+        @if (form.get('name').hasError('minlength') && form.get('name').touched) {
+            <p class="alert alert-warning">The name field must have at least three characters.</p>
+        }
+        
+        @if (form.get('value').hasError('required') && form.get('value').touched) {
+            <p class="alert alert-warning">The value field needs to be filled in.</p>
+        }
+        
+        @if (form.get('value').hasError('min') && form.get('value').touched) {
+            <p class="alert alert-warning">Minimum value is  0,01.</p>
+        }
+
+
+    <input type="hidden" class="form-control" formControlName="id" readonly >
     <input type="text"   class="form-control" formControlName="name" placeholder="Name">
     <input type="number" class="form-control" formControlName="value" placeholder="Value">
 
@@ -11,7 +30,7 @@
 </form>
 
 <!-- PESQUISA -->
-<input type="text" placeholder="Qual produto está procurando?" class="form-control pesquisa" [(ngModel)]="searchTerm">
+<input type="text" placeholder="Qual produto está procurando?" class="form-control search" [(ngModel)]="searchTerm">
 
 <!-- TABLE -->
 <table class="table table-striped">

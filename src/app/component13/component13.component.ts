@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Product } from '../model/Product';
 import { ProductService } from '../service/product.service';
 import { CommonModule } from '@angular/common';
@@ -21,8 +21,8 @@ export class Component13Component {
   // Form Object
   form = new FormGroup({
     id: new FormControl(null),
-    name: new FormControl(),
-    value: new FormControl(null)
+    name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    value: new FormControl(null, [Validators.required, Validators.min(0.01)])
   })
 
   // Termo pesquisado
