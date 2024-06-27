@@ -14,6 +14,7 @@ import { Component11Component } from "./component11/component11.component";
 import { Component12Component } from "./component12/component12.component";
 import { Component13Component } from "./component13/component13.component";
 import { CommonModule } from '@angular/common';
+import { Component14Component } from "./component14/component14.component";
 
 @Component({
     selector: 'app-root',
@@ -21,8 +22,8 @@ import { CommonModule } from '@angular/common';
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
     imports: [RouterOutlet, Componente01Component, Componente02Component, Componente03Component, Componente04Component, Component05Component,
-      Component06Component, Component07Component, Component08Component, Component09Component, Component10Component, Component11Component, Component12Component,
-      Component13Component, CommonModule]
+        Component06Component, Component07Component, Component08Component, Component09Component, Component10Component, Component11Component, Component12Component,
+        Component13Component, CommonModule, Component14Component]
 })
 export class AppComponent {
   title = 'basic-angular';
