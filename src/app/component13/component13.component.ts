@@ -26,7 +26,7 @@ export class Component13Component {
   })
 
   // Termo pesquisado
-  termoPesquisado:string = '';
+  searchTerm:string = '';
 
   constructor(private service:ProductService){}
 
@@ -40,10 +40,19 @@ export class Component13Component {
   }
 
   save(){
-    this.service.save(this.form.value as Product).subscribe(sendBack => {
-                                              this.products.push(sendBack);
-                                              this.form.reset();
-    });
+
+    let existingNamePosition = this.products.findIndex(obj => {return obj.name === this.form.value.name});
+
+    if(existingNamePosition != -1){
+      alert('The name entered already exists, please register another product.')
+    }else{
+        
+      this.service.save(this.form.value as Product).subscribe(sendBack => {
+                                                this.products.push(sendBack);
+                                                this.form.reset();
+      });
+    
+    }
   }
 
   selectProduct(index:number){

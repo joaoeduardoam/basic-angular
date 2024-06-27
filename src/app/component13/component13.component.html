@@ -11,7 +11,7 @@
 </form>
 
 <!-- PESQUISA -->
-<input type="text" placeholder="Qual produto está procurando?" class="form-control pesquisa" [(ngModel)]="termoPesquisado">
+<input type="text" placeholder="Qual produto está procurando?" class="form-control pesquisa" [(ngModel)]="searchTerm">
 
 <!-- TABLE -->
 <table class="table table-striped">
@@ -26,7 +26,7 @@
 
     <tbody>
         <tr *ngFor="let p of products; let idx = index">
-            <ng-container *ngIf="p.name.toLowerCase().includes(termoPesquisado.toLowerCase()) || !termoPesquisado">
+            <ng-container *ngIf="p.name.toLowerCase().includes(searchTerm.toLowerCase()) || !searchTerm">
                 <td>{{idx+1}}</td>
                 <td>{{p.name}}</td>
                 <td>{{p.value}}</td>
