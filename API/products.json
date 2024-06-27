@@ -1,14 +1,24 @@
 {
-    "products": [
-      {
-        "name": "Galaxy S24",
-        "value": 5000,
-        "id": 1
-      },
-      {
-        "name": "iPhone 15",
-        "value": 7000,
-        "id": 2
-      }
-    ]
-  }
+  "products": [
+    {
+      "name": "Galaxy S24",
+      "value": 5000,
+      "id": 1
+    },
+    {
+      "id": 4,
+      "name": "Xiaomi NOte",
+      "value": 1000
+    },
+    {
+      "id": 6,
+      "name": "werwerwer",
+      "value": 423423432
+    },
+    {
+      "id": 7,
+      "name": "aaaaaaaaaa",
+      "value": 123123
+    }
+  ]
+}
