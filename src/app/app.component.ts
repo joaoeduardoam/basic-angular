@@ -15,6 +15,7 @@ import { Component12Component } from "./component12/component12.component";
 import { Component13Component } from "./component13/component13.component";
 import { CommonModule } from '@angular/common';
 import { Component14Component } from "./component14/component14.component";
+import { Component15Component } from "./component15/component15.component";
 
 @Component({
     selector: 'app-root',
@@ -23,7 +24,7 @@ import { Component14Component } from "./component14/component14.component";
     styleUrl: './app.component.css',
     imports: [RouterOutlet, Componente01Component, Componente02Component, Componente03Component, Componente04Component, Component05Component,
         Component06Component, Component07Component, Component08Component, Component09Component, Component10Component, Component11Component, Component12Component,
-        Component13Component, CommonModule, Component14Component]
+        Component13Component, CommonModule, Component14Component, Component15Component]
 })
 export class AppComponent {
   title = 'basic-angular';
