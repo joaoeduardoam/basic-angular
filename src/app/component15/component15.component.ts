@@ -17,4 +17,6 @@ export class Component15Component {
     this.names.push(name);
   }
 
+
+
 }
