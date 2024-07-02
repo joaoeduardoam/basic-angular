@@ -11,4 +11,10 @@ import { Component15FormComponent } from "../component15-form/component15-form.c
 })
 export class Component15Component {
 
+  names:string[] = ['Joao','Amanda', 'Yan', 'Maria'];
+  
+  save(name:string){
+    this.names.push(name);
+  }
+
 }
