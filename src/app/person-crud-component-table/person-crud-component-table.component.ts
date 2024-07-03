@@ -18,7 +18,7 @@ export class PersonCrudComponentTableComponent {
 
   //Sends name that came from form (input text) to component15.html
   selectPerson(idx:number){
-    this.function.emit(idx);
+    // this.function.emit(idx);
   }
 
 }

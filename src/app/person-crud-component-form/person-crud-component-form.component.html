@@ -1,22 +1,35 @@
 <!-- FORM -->
 <form [formGroup]="formPerson">
 
-    <!-- VALIDATIONS
-    @if (form.get('name').hasError('required') && form.get('name').touched) {
-       <p class="alert alert-warning">The name field needs to be filled in.</p>
-   }
+    <!-- VALIDATIONS -->
 
-   @if (form.get('name').hasError('minlength') && form.get('name').touched) {
-       <p class="alert alert-warning">The name field must have at least three characters.</p>
-   }
-   
-   @if (form.get('value').hasError('required') && form.get('value').touched) {
-       <p class="alert alert-warning">The value field needs to be filled in.</p>
-   }
-   
-   @if (form.get('value').hasError('min') && form.get('value').touched) {
-       <p class="alert alert-warning">Minimum value is  0,01.</p>
-   } -->
+    @if (formPerson.get('name').hasError('required') && formPerson.get('name').touched) {
+    <p class="alert alert-warning">The name field needs to be filled in.</p>
+    }
+
+    @if (formPerson.get('name').hasError('minlength') && formPerson.get('name').touched) {
+        <p class="alert alert-warning">The name field must have at least three characters.</p>
+    }
+
+    @if (formPerson.get('age').hasError('required') && formPerson.get('age').touched) {
+        <p class="alert alert-warning">The age field needs to be filled in.</p>
+    }
+
+    @if (formPerson.get('age').hasError('min') && formPerson.get('age').touched) {
+        <p class="alert alert-warning">Minimum value is  0</p>
+    }
+
+    @if (formPerson.get('age').hasError('max') && formPerson.get('age').touched) {
+        <p class="alert alert-warning">Maximum value is  120</p>
+    }
+
+    @if (formPerson.get('city').hasError('required') && formPerson.get('city').touched) {
+    <p class="alert alert-warning">The city field needs to be filled in.</p>
+    }
+
+    @if (formPerson.get('city').hasError('minlength') && formPerson.get('city').touched) {
+        <p class="alert alert-warning">The city field must have at least three characters.</p>
+    }
 
 
 <input type="hidden" class="form-control" formControlName="id" readonly >

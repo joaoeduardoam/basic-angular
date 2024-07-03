@@ -18,9 +18,6 @@ export class PersonCrudComponentComponent {
 
   persons:Person[] = [];
   
-  // save(name:string){
-  //   this.names.push(name);
-  // }
 
   ngOnInit(){
     this.select();
@@ -36,7 +33,6 @@ export class PersonCrudComponentComponent {
     
       this.service.save(person).subscribe(sendBack => {
                                                 this.persons.push(sendBack);
-                                                // this.form.reset();
       });
 
   }
