@@ -2,6 +2,7 @@ export class Person{
 
     name:string;
     age:number;
-    city:string;
+    city:string;    
+    id:number;
 
 }

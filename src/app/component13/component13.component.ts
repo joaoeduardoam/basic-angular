@@ -30,11 +30,12 @@ export class Component13Component {
 
   constructor(private service:ProductService){}
 
-  //At Component Initialization
+  //At Component Initialization (after html is mounted) run select() for initialization of vector products
   ngOnInit(){
     this.select();
   }
 
+  // The API return (service.select()) receives the name sendBack and the vector products receives the sendBack value
   select(){
     this.service.select().subscribe(sendBack => {this.products = sendBack});
   }

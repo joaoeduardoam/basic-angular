@@ -17,7 +17,7 @@ export class Component15FormComponent {
   @Output() function = new EventEmitter<string>();
 
 
-  //Sends name that came from form (input text) to component15.html
+  //Sends name that came from form (input text) to component 
   saveName(){
     this.function.emit(this.name);
   }

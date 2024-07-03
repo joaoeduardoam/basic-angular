@@ -1,0 +1,24 @@
+<!-- <p>{{vector| json}}
+</p> -->
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>Select</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let v of vector; let idx = index">
+            <td>{{idx+1}}</td>
+            <td>{{v.name}}</td>
+            <td>{{v.age}}</td>
+            <td>{{v.city}}</td>
+            <td><button class="btn btn-primary" 
+                (click)="selectPerson(idx)"
+                >Select</button></td>
+        </tr>
+    </tbody>
+</table>
