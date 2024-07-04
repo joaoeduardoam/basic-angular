@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 import { Person } from '../model/Person';
 
 // Importar o RxJS
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 // Configuração do @Injectable
 @Injectable({
@@ -28,6 +28,13 @@ export class PersonService {
   // Método para selecionar produtos
   select():Observable<Person[]>{
     return this.http.get<Person[]>(this.url);
+  }
+
+  selectPerson(index:number):Observable<Person>{
+    
+    let persons: Observable<Person[]> = this.http.get<Person[]>(this.url);
+    return persons.pipe(map(personArray => personArray[index]));
+    
   }
 
   // Método para cadastrar produtos

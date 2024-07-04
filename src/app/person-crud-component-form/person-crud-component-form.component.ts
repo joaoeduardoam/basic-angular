@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
@@ -14,7 +14,10 @@ import { CommonModule } from '@angular/common';
 })
 export class PersonCrudComponentFormComponent {
 
+
   @Output() function = new EventEmitter<Person>();
+
+  @Input() personSelectedForm:Person = new Person();
 
 
   //Button Visibility
@@ -27,10 +30,6 @@ export class PersonCrudComponentFormComponent {
     city: new FormControl('', [Validators.required, Validators.minLength(3)])
   })
 
-  // Sends name that came from form (input text) to component15.html
-  saveName(){
-    //this.function.emit(this.name);
-  }
 
   remove() {
     throw new Error('Method not implemented.');
@@ -42,6 +41,17 @@ export class PersonCrudComponentFormComponent {
   save() {
     this.function.emit(this.formPerson.value as Person);
     this.formPerson.reset();
+  }
+
+  selectPerson(index:number) {
+    this.formPerson.setValue({
+      id : this.personSelectedForm.id,
+      name : this.personSelectedForm.name,
+      age : this.personSelectedForm.age,
+      city : this.personSelectedForm.city      
+    });
+
+    this.btnSave = false;
   }
 
 

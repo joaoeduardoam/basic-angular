@@ -13,12 +13,14 @@ export class PersonCrudComponentTableComponent {
 
   @Input() vector:Person[] = [];
 
-  @Output() function = new EventEmitter<number>();
+  @Output() outputSelectedIndex = new EventEmitter<number>();
 
 
-  //Sends name that came from form (input text) to component15.html
+  //Sends idx that came from form (button) to component15.html
   selectPerson(idx:number){
-    // this.function.emit(idx);
+    this.outputSelectedIndex.emit(idx);
   }
+
+
 
 }

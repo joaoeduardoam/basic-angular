@@ -1,2 +1,3 @@
-<app-person-crud-component-form (function)="save($event)"></app-person-crud-component-form>
-<app-person-crud-component-table [vector]="persons"></app-person-crud-component-table>
+<p>PersonSelected{{personSelected}}</p>
+<app-person-crud-component-form (function)="save($event)" [personSelectedForm]="personSelected"></app-person-crud-component-form>
+<app-person-crud-component-table [vector]="persons" (outputSelectedIndex)="selectPerson($event)"></app-person-crud-component-table>
