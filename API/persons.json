@@ -41,6 +41,18 @@
       "name": "AAA",
       "age": 120,
       "city": "THE"
+    },
+    {
+      "id": 8,
+      "name": null,
+      "age": null,
+      "city": null
+    },
+    {
+      "id": 9,
+      "name": null,
+      "age": null,
+      "city": null
     }
   ]
 }

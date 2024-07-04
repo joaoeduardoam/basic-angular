@@ -42,11 +42,7 @@ export class PersonCrudComponentComponent {
 
   selectPerson(index:number){
       
-    //this.personSelected=this.persons[index];
-
-    this.service.selectPerson(index).subscribe(sendBack => {
-      this.persons.push(sendBack);
-    });
+    this.personSelected=this.persons[index];
 
   }
 
