@@ -27,38 +27,8 @@
     {
       "id": 5,
       "name": "Ela",
-      "age": 123,
+      "age": 12,
       "city": "qqqqqqqqq"
-    },
-    {
-      "id": 6,
-      "name": "Nos",
-      "age": 123,
-      "city": "asdasd"
-    },
-    {
-      "id": 7,
-      "name": "BBB",
-      "age": 12,
-      "city": "THe"
-    },
-    {
-      "id": 8,
-      "name": "qqqqq",
-      "age": 111,
-      "city": "111"
-    },
-    {
-      "id": 9,
-      "name": "wwww",
-      "age": 22,
-      "city": "222"
-    },
-    {
-      "id": 10,
-      "name": "a111",
-      "age": 12,
-      "city": "aasd"
     }
   ]
 }

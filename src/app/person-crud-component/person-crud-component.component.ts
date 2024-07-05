@@ -51,6 +51,17 @@ export class PersonCrudComponentComponent {
     })
   }
 
+  remove(index:number) {
+    this.service.remove(index).subscribe(() => {
+      let removedIndex = this.persons.findIndex(obj => {
+                                      return index === obj.id;
+      });
+
+      this.persons.splice(removedIndex,1);
+    })
+
+  }
+
   selectPerson(index:number){
       
     this.personSelected=this.persons[index];

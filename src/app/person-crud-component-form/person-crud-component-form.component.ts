@@ -24,6 +24,8 @@ export class PersonCrudComponentFormComponent implements OnChanges{
 
   @Output() outputUpdatedIndex = new EventEmitter<Person>();
 
+  @Output() outputRemovedIndex = new EventEmitter<number>();
+
 
   ngOnChanges(changes: SimpleChanges): void {
 
@@ -52,6 +54,7 @@ export class PersonCrudComponentFormComponent implements OnChanges{
 
 
   remove() {
+    this.outputRemovedIndex.emit(this.formPerson.value.id);
     this.btnSave = true;
     this.formPerson.reset();
   }
