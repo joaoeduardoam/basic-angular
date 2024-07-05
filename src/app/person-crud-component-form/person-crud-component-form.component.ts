@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './person-crud-component-form.component.css'
 })
 export class PersonCrudComponentFormComponent implements OnChanges{
+
   
   
 
@@ -20,6 +21,8 @@ export class PersonCrudComponentFormComponent implements OnChanges{
   @Output() function = new EventEmitter<Person>();
 
   @Input() personSelectedForm:Person = new Person();
+
+  @Output() outputUpdatedIndex = new EventEmitter<Person>();
 
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -52,15 +55,26 @@ export class PersonCrudComponentFormComponent implements OnChanges{
     this.btnSave = true;
     this.formPerson.reset();
   }
+
   update() {
+    
+    this.outputUpdatedIndex.emit(this.formPerson.value as Person);
     this.btnSave = true;
     this.formPerson.reset();
   }
+
+  cancel() {
+    
+    }
   
   save() {
     this.function.emit(this.formPerson.value as Person);
     this.formPerson.reset();
   }
+
+
+
+
 
   selectPerson(index:number) {
     this.formPerson.setValue({

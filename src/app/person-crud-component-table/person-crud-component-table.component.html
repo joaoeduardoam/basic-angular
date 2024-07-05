@@ -16,9 +16,8 @@
             <td>{{v.name}}</td>
             <td>{{v.age}}</td>
             <td>{{v.city}}</td>
-            <td><button class="btn btn-primary" 
-                (click)="selectPerson(idx)"
-                >Select</button></td>
+            <!-- <td><button class="btn btn-primary"  (click)="selectPerson(idx)"  >Select</button></td> -->
+            <td><button mat-fab extended color="primary" value="Select" (click)="selectPerson(idx)"><mat-icon>view_list</mat-icon>Select</button></td>
         </tr>
     </tbody>
 </table>

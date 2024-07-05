@@ -13,6 +13,7 @@ import { Person } from '../model/Person';
 })
 export class PersonCrudComponentComponent {
 
+
   
   constructor(private service:PersonService){}
 
@@ -38,6 +39,16 @@ export class PersonCrudComponentComponent {
       this.persons.push(sendBack);
     });
 
+  }
+
+  update(person:Person) {
+    this.service.update(person).subscribe(sendBack => {
+      let updatedIndex = this.persons.findIndex(obj => {
+        return person.id === obj.id;
+      });
+
+      this.persons[updatedIndex] = sendBack;
+    })
   }
 
   selectPerson(index:number){
