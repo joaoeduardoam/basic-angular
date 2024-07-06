@@ -27,7 +27,7 @@ export class PersonCrudComponentComponent {
     this.select();
   } 
 
-  // The API return (service.select()) receives the name sendBack and the vector products receives the sendBack value
+  // sendBack receives the API return(service.select()) and the vector persons receives the sendBack value
   select(){
     this.service.select().subscribe(sendBack => {this.persons = sendBack});
     // console.log(this.persons);

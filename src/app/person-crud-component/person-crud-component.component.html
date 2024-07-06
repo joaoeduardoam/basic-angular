@@ -3,4 +3,6 @@
                                 (outputUpdatedIndex)="update($event)"
                                 (outputRemovedIndex)="remove($event)"
                                 [personSelectedForm]="personSelected"></app-person-crud-component-form>
+
+                                
 <app-person-crud-component-table [vector]="persons" (outputSelectedIndex)="selectPerson($event)"></app-person-crud-component-table>
