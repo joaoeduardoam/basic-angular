@@ -6,6 +6,6 @@ import { PageErrorComponent } from './pages/page-error/page-error.component';
 export const routes: Routes = [
     {path: 'page1', component:Page1Component},
     {path: 'page2', component:Page2Component},
-    {path: '', redirectTo:'page1', pathMatch:'full'},
-    {path: '**', component:PageErrorComponent},
+    {path: '', redirectTo:'/page1', pathMatch:'full'},
+    {path: '**', component:PageErrorComponent}
 ];
