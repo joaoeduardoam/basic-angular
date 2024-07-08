@@ -19,16 +19,10 @@
       "city": "qwe"
     },
     {
-      "id": 4,
-      "name": "Ele",
-      "age": 12,
-      "city": "asd"
+      "id": 6
     },
     {
-      "id": 5,
-      "name": "Ela",
-      "age": 12,
-      "city": "qqqqqqqqq"
+      "id": 7
     }
   ]
 }

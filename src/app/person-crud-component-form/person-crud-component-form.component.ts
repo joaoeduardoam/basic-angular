@@ -27,19 +27,37 @@ export class PersonCrudComponentFormComponent implements OnChanges{
   @Output() outputRemovedIndex = new EventEmitter<number>();
 
 
-  ngOnChanges(changes: SimpleChanges): void {
+  // ngOnChanges(changes: SimpleChanges): void {
 
-    if (changes['personSelectedForm']) {
+  //   if (changes['personSelectedForm']) {
       
-      const newPerson = changes['personSelectedForm'].currentValue;
+  //     const newPerson = changes['personSelectedForm'].currentValue;
 
-      this.selectPerson(newPerson.id);
+  //     this.selectPerson(newPerson.id);
 
-      console.log(`User profile updated: ${newPerson.name}, ${newPerson.city}`);
-      // Update UI or perform other actions based on the new person data
-    }
+  //     console.log(`User profile updated: ${newPerson.name}, ${newPerson.city}`);
+  //     // Update UI or perform other actions based on the new person data
+  //   }
+  
+  // }
+
+
+    //  From Ralf Lima
+    ngOnChanges (): void {
+      // Caso o objeto personSelectedForm tenha a característica
+      // namediferente de null, executa a ação
+      if (this.personSelectedForm.name != null) {
+      // Envia as características do objeto personSelectedForm para o formPerson
+
+      this.selectPerson(this.personSelectedForm.id);
+
+      }      
+
+    }  
+
+
     
-  }
+  
 
 
   //Button Visibility
@@ -67,6 +85,12 @@ export class PersonCrudComponentFormComponent implements OnChanges{
   }
 
   cancel() {
+
+    //this.outputUpdatedIndex.emit(new Person());
+    //this.personSelectedForm = new Person();
+    this.formPerson.reset();    
+    this.btnSave = true;
+    
     
     }
   
